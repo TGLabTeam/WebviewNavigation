@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
 
         webview.loadDataWithBaseURL(
-            "https://static.kambicdn.com",
+            "https://scooore.be",
             html,
             "text/html",
             UTF_8.name(),
