@@ -6,6 +6,7 @@ import android.webkit.WebResourceRequest
 import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import java.nio.charset.StandardCharsets.UTF_8
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +20,16 @@ class MainActivity : AppCompatActivity() {
 
         webview.webViewClient = createWebClient()
 
-        webview.loadUrl("https://google.com")
+        val html = this.assets.open("kambi.html").bufferedReader().use { it.readText() }
+
+
+        webview.loadDataWithBaseURL(
+            "https://static.kambicdn.com",
+            html,
+            "text/html",
+            UTF_8.name(),
+            null
+        )
     }
 
     private fun createWebClient() =

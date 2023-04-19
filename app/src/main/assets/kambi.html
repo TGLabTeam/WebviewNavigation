@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=IE8"/>
+    <meta name="msapplication-tap-highlight" content="no"/>
+    <title>Retail betting client</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <style>
+    body {
+      margin: 0;
+    }
+    </style>
+</head>
+<body>
+<script>
+    window._kc = {
+        currency: "EUR",
+        locale: "fr_BE",
+        market: "BE",
+        playerId: "",
+        ticket: "",
+        oddsFormat: "decimal",
+        betslipBarcodeMode: false,
+        channelId: 7
+    },
+    window.customerSettings = {
+        enableMyBetsHarmonization: true,
+        enableOddsFormatSelector: true,
+        hideHeader: true,
+        loginUrl: "notification",
+        notification: function (event) {
+            var eventJson = JSON.stringify(event)
+            console.log("kambi.notification: " + eventJson);
+        },
+    };
+         console.log("kambi._kc: " + JSON.stringify(window._kc));
+</script>
+<script type="text/javascript" src="https://static.kambicdn.com/client/bnlbe/kambi-bootstrap.js">
+</script>
+</body>
+</html>
